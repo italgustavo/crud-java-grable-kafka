@@ -29,7 +29,7 @@ public class ClientService {
         public Client updateClient(final Client client) throws Exception {
                 final Optional<Client> clientOptional = clientRepository.findById(client.id());
 
-                if(clientOptional.isPresent()) {
+                if(clientOptional.isEmpty()) {
                         throw new Exception("Client not exists " + client );
                 }
 
